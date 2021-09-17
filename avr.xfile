@@ -1,0 +1,57 @@
+[constants]
+mfam      = 'avr'
+mcpu      = 'atmega328p'
+msys      = 'bare'
+mabi      = 'none'
+toolchain = mfam
+usrbin    = '/usr/bin'
+
+[binaries]
+c        = usrbin / toolchain + '-gcc'
+cpp      = usrbin / toolchain + '-g++'
+ld       = usrbin / toolchain + '-ld'
+ar       = usrbin / toolchain + '-ar'
+as       = usrbin / toolchain + '-as'
+size     = usrbin / toolchain + '-size'
+objdump  = usrbin / toolchain + '-objdump'
+objcopy  = usrbin / toolchain + '-objcopy'
+strip    = usrbin / toolchain + '-strip'
+gdb      = usrbin / toolchain + '-gdb'
+openocd  = usrbin / toolchain + '-gcc'
+avrdude  = usrbin / 'avrdude'
+
+#exe_wrapper = usrbin / 'simavr'
+terminal = 'x-terminal-emulator'
+
+[properties]
+c_args = [
+  '-mmcu=' + mcpu,
+  '-fsigned-char',
+  '-fshort-enums',
+  '-fpack-struct',
+  '-ffunction-sections',
+  '-fdata-sections',
+  ]
+cpp_args = [
+  '-mmcu=' + mcpu,
+  '-fno-exceptions',
+  '-fshort-enums',
+  '-fpack-struct',
+  '-ffunction-sections',
+  '-fdata-sections',
+  ]
+c_link_args = [
+  #'-nostdlib',
+  ]
+cpp_link_args = [
+  #'-nostdlib'
+  ]
+
+[host_machine]
+system     = msys
+cpu_family = mfam
+cpu        = mcpu
+endian     = 'little'
+
+[built-in options]
+default_library = 'static'
