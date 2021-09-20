@@ -26,15 +26,19 @@ ardu_src = [
   arduroot / 'cores/arduino/wiring_analog.c',
   arduroot / 'cores/arduino/wiring_digital.c',
   arduroot / 'cores/arduino/wiring_pulse.c',
-  arduroot / 'cores/arduino/wiring_shift.c'
+  arduroot / 'cores/arduino/wiring_shift.c',
   ]
 
 [built-in options]
 c_flags = [
   '-I' + arduroot / 'variants/standard',
   '-I' + arduroot / 'cores/arduino',
+  '-I' + arduroot / 'libraries',
+  '-I' + '$HOME/Arduino/libraries',
   ]
 cpp_flags = [
   '-I' + arduroot / 'variants/standard',
   '-I' + arduroot / 'cores/arduino',
+  '-I' + arduroot / 'libraries',
+  '-I' + '$HOME/Arduino/libraries',
   ]
