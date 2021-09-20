@@ -1,0 +1,40 @@
+[constants]
+arduroot = '/usr/share/arduino/hardware/archlinux-arduino/avr'
+
+[properties]
+ardu_src = [
+  arduroot / 'cores/arduino/CDC.cpp',
+  arduroot / 'cores/arduino/HardwareSerial.cpp',
+  arduroot / 'cores/arduino/HardwareSerial0.cpp',
+  arduroot / 'cores/arduino/HardwareSerial1.cpp',
+  arduroot / 'cores/arduino/HardwareSerial2.cpp',
+  arduroot / 'cores/arduino/HardwareSerial3.cpp',
+  arduroot / 'cores/arduino/IPAddress.cpp',
+  arduroot / 'cores/arduino/PluggableUSB.cpp',
+  arduroot / 'cores/arduino/Print.cpp',
+  arduroot / 'cores/arduino/Stream.cpp',
+  arduroot / 'cores/arduino/Tone.cpp',
+  arduroot / 'cores/arduino/USBCore.cpp',
+  arduroot / 'cores/arduino/WInterrupts.c',
+  arduroot / 'cores/arduino/WMath.cpp',
+  arduroot / 'cores/arduino/WString.cpp',
+  arduroot / 'cores/arduino/abi.cpp',
+  arduroot / 'cores/arduino/hooks.c',
+  arduroot / 'cores/arduino/main.cpp',
+  arduroot / 'cores/arduino/new.cpp',
+  arduroot / 'cores/arduino/wiring.c',
+  arduroot / 'cores/arduino/wiring_analog.c',
+  arduroot / 'cores/arduino/wiring_digital.c',
+  arduroot / 'cores/arduino/wiring_pulse.c',
+  arduroot / 'cores/arduino/wiring_shift.c'
+  ]
+
+[built-in options]
+c_flags = [
+  '-I' + arduroot / 'variants/standard',
+  '-I' + arduroot / 'cores/arduino',
+  ]
+cpp_flags = [
+  '-I' + arduroot / 'variants/standard',
+  '-I' + arduroot / 'cores/arduino',
+  ]
