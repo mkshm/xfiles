@@ -17,13 +17,20 @@ objdump  = usrbin / toolchain + '-objdump'
 objcopy  = usrbin / toolchain + '-objcopy'
 strip    = usrbin / toolchain + '-strip'
 gdb      = usrbin / toolchain + '-gdb'
-openocd  = usrbin / toolchain + '-gcc'
-avrdude  = usrbin / 'avrdude'
 
+openocd      = usrbin / 'openocd'
+avrdude      = usrbin / 'avrdude'
 #exe_wrapper = usrbin / 'simavr'
 terminal = 'x-terminal-emulator'
 
-[properties]
+[host_machine]
+system     = msys
+cpu_family = mfam
+cpu        = mcpu
+endian     = 'little'
+
+[built-in options]
+default_library = 'static'
 c_args = [
   '-mmcu=' + mcpu,
   '-fsigned-char',
@@ -41,17 +48,10 @@ cpp_args = [
   '-fdata-sections',
   ]
 c_link_args = [
+  '-mmcu=' + mcpu,
   #'-nostdlib',
   ]
 cpp_link_args = [
+  '-mmcu=' + mcpu,
   #'-nostdlib'
   ]
-
-[host_machine]
-system     = msys
-cpu_family = mfam
-cpu        = mcpu
-endian     = 'little'
-
-[built-in options]
-default_library = 'static'
