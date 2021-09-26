@@ -2,7 +2,7 @@
 mfam  = 'riscv64'
 msys  = 'bare'
 mabi  = 'gnu'
-chain = mfam + msys + mabi
+chain = mfam +'-'+ msys +'-'+ mabi
 bin   = '/usr/bin'
 
 [binaries]
