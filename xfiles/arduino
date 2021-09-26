@@ -40,8 +40,11 @@ c_flags = [
   '-fdata-sections',
   '-I' + arduroot / 'variants/standard',
   '-I' + arduroot / 'cores/arduino',
-  '-I' + arduroot / 'libraries',
-  '-I' + '$HOME/Arduino/libraries',
+  '-I' + arduroot / 'libraries/EEPROM',
+  '-I' + arduroot / 'libraries/HID',
+  '-I' + arduroot / 'libraries/SoftwareSerial',
+  '-I' + arduroot / 'libraries/SPI',
+  '-I' + arduroot / 'libraries/Wire',
   ]
 cpp_flags = [
   '-mmcu=' + mcpu,
@@ -52,8 +55,11 @@ cpp_flags = [
   '-fdata-sections',
   '-I' + arduroot / 'variants/standard',
   '-I' + arduroot / 'cores/arduino',
-  '-I' + arduroot / 'libraries',
-  '-I' + '$HOME/Arduino/libraries',
+  '-I' + arduroot / 'libraries/EEPROM',
+  '-I' + arduroot / 'libraries/HID',
+  '-I' + arduroot / 'libraries/SoftwareSerial',
+  '-I' + arduroot / 'libraries/SPI',
+  '-I' + arduroot / 'libraries/Wire',
   ]
 c_link_args = [
   '-mmcu=' + mcpu,
