@@ -19,6 +19,6 @@ meson install -C build
 
 Building a project for Arduino:
 ```sh
-meson . build --cross-file=arduino
+meson setup build . --cross-file=arduino
 ninja -C build
 ```
