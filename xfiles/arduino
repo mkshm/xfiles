@@ -28,6 +28,11 @@ ardu_src = [
   arduroot / 'cores/arduino/wiring_digital.c',
   arduroot / 'cores/arduino/wiring_pulse.c',
   arduroot / 'cores/arduino/wiring_shift.c',
+  arduroot / 'libraries/HID/src/HID.cpp',
+  arduroot / 'libraries/SoftwareSerial/src/SoftwareSerial.cpp',
+  arduroot / 'libraries/SPI/src/SPI.cpp',
+  arduroot / 'libraries/Wire/src/Wire.cpp',
+  arduroot / 'libraries/Wire/src/utility/twi.c',
   ]
 
 [built-in options]
@@ -40,11 +45,11 @@ c_flags = [
   '-fdata-sections',
   '-I' + arduroot / 'variants/standard',
   '-I' + arduroot / 'cores/arduino',
-  '-I' + arduroot / 'libraries/EEPROM',
-  '-I' + arduroot / 'libraries/HID',
-  '-I' + arduroot / 'libraries/SoftwareSerial',
-  '-I' + arduroot / 'libraries/SPI',
-  '-I' + arduroot / 'libraries/Wire',
+  '-I' + arduroot / 'libraries/EEPROM/src',
+  '-I' + arduroot / 'libraries/HID/src',
+  '-I' + arduroot / 'libraries/SoftwareSerial/src',
+  '-I' + arduroot / 'libraries/SPI/src',
+  '-I' + arduroot / 'libraries/Wire/src',
   ]
 cpp_flags = [
   '-mmcu=' + mcpu,
@@ -55,11 +60,11 @@ cpp_flags = [
   '-fdata-sections',
   '-I' + arduroot / 'variants/standard',
   '-I' + arduroot / 'cores/arduino',
-  '-I' + arduroot / 'libraries/EEPROM',
-  '-I' + arduroot / 'libraries/HID',
-  '-I' + arduroot / 'libraries/SoftwareSerial',
-  '-I' + arduroot / 'libraries/SPI',
-  '-I' + arduroot / 'libraries/Wire',
+  '-I' + arduroot / 'libraries/EEPROM/src',
+  '-I' + arduroot / 'libraries/HID/src',
+  '-I' + arduroot / 'libraries/SoftwareSerial/src',
+  '-I' + arduroot / 'libraries/SPI/src',
+  '-I' + arduroot / 'libraries/Wire/src',
   ]
 c_link_args = [
   '-mmcu=' + mcpu,
