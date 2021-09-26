@@ -36,7 +36,7 @@ ardu_src = [
   ]
 
 [built-in options]
-c_flags = [
+c_args = [
   '-mmcu=' + mcpu,
   '-fsigned-char',
   '-fshort-enums',
@@ -51,7 +51,7 @@ c_flags = [
   '-I' + arduroot / 'libraries/SPI/src',
   '-I' + arduroot / 'libraries/Wire/src',
   ]
-cpp_flags = [
+cpp_args = [
   '-mmcu=' + mcpu,
   '-fno-exceptions',
   '-fshort-enums',
@@ -68,9 +68,10 @@ cpp_flags = [
   ]
 c_link_args = [
   '-mmcu=' + mcpu,
-  #'-nostdlib',
   ]
 cpp_link_args = [
   '-mmcu=' + mcpu,
-  #'-nostdlib'
   ]
+
+[host_machine]
+cpu = mcpu
