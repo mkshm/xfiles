@@ -1,4 +1,5 @@
 [constants]
+mcpu     = 'atmega328p'
 arduroot = '/usr/share/arduino/hardware/archlinux-arduino/avr'
 
 [properties]
@@ -31,14 +32,34 @@ ardu_src = [
 
 [built-in options]
 c_flags = [
+  '-mmcu=' + mcpu,
+  '-fsigned-char',
+  '-fshort-enums',
+  '-fpack-struct',
+  '-ffunction-sections',
+  '-fdata-sections',
   '-I' + arduroot / 'variants/standard',
   '-I' + arduroot / 'cores/arduino',
   '-I' + arduroot / 'libraries',
   '-I' + '$HOME/Arduino/libraries',
   ]
 cpp_flags = [
+  '-mmcu=' + mcpu,
+  '-fno-exceptions',
+  '-fshort-enums',
+  '-fpack-struct',
+  '-ffunction-sections',
+  '-fdata-sections',
   '-I' + arduroot / 'variants/standard',
   '-I' + arduroot / 'cores/arduino',
   '-I' + arduroot / 'libraries',
   '-I' + '$HOME/Arduino/libraries',
+  ]
+c_link_args = [
+  '-mmcu=' + mcpu,
+  #'-nostdlib',
+  ]
+cpp_link_args = [
+  '-mmcu=' + mcpu,
+  #'-nostdlib'
   ]

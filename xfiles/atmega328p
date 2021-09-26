@@ -1,0 +1,32 @@
+[constants]
+mcpu = 'atmega328p'
+
+[host_machine]
+cpu = mcpu
+
+[built-in options]
+default_library = 'static'
+c_args = [
+  '-mmcu=' + mcpu,
+  '-fsigned-char',
+  '-fshort-enums',
+  '-fpack-struct',
+  '-ffunction-sections',
+  '-fdata-sections',
+  ]
+cpp_args = [
+  '-mmcu=' + mcpu,
+  '-fno-exceptions',
+  '-fshort-enums',
+  '-fpack-struct',
+  '-ffunction-sections',
+  '-fdata-sections',
+  ]
+c_link_args = [
+  '-mmcu=' + mcpu,
+  #'-nostdlib',
+  ]
+cpp_link_args = [
+  '-mmcu=' + mcpu,
+  #'-nostdlib'
+  ]

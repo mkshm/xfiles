@@ -1,0 +1,27 @@
+[constants]
+mfam  = 'avr'
+msys  = 'bare'
+mabi  = 'none'
+chain = mfam
+bin   = '/usr/bin'
+
+[binaries]
+c        = bin / chain + '-gcc'
+cpp      = bin / chain + '-g++'
+ld       = bin / chain + '-ld'
+ar       = bin / chain + '-ar'
+as       = bin / chain + '-as'
+size     = bin / chain + '-size'
+objdump  = bin / chain + '-objdump'
+objcopy  = bin / chain + '-objcopy'
+strip    = bin / chain + '-strip'
+gdb      = bin / chain + '-gdb'
+
+openocd      = bin / 'openocd'
+avrdude      = bin / 'avrdude'
+#exe_wrapper = bin / 'simavr'
+
+[host_machine]
+system     = msys
+cpu_family = mfam
+endian     = 'little'
