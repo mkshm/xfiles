@@ -52,6 +52,8 @@ following example.
 ```meson
 project('simple', 'c')
 
+objcopy = find_program('objcopy')
+
 elf_file = executable('example', 'example.c')
 
 eep_file = custom_target('example.eep',
@@ -74,6 +76,8 @@ hex_file = custom_target('example.hex',
 Some targets also include vendor specific tools such as avrdude.
 
 ```meson
+avrdude = find_program('avrdude')
+
 run_target('exmaple.upload',
   depends: hex_file,
   command: [avrdude, '-v', '-v', '-v', '-v',
