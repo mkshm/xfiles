@@ -16,7 +16,6 @@ c_args = [
   ]
 cpp_args = [
   '-mmcu=' + mcpu,
-  '-fno-exceptions',
   '-fshort-enums',
   '-fpack-struct',
   '-ffunction-sections',
