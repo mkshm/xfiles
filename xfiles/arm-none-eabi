@@ -20,9 +20,13 @@ readelf   = bin / chain + '-readelf'
 elfedit   = bin / chain + '-elfedit'
 strings   = bin / chain + '-strings'
 strip     = bin / chain + '-strip'
+addr2line = bin / chain + '-addr2line'
+cppfilt   = bin / chain + '-c++filt'
 gdb       = bin / chain + '-gdb'
 dwp       = bin / chain + '-dwp'
-addr2line = bin / chain + '-addr2line'
+
+openocd   = bin / 'openocd'
+qemu      = bin / 'qemu-system-arm'
 
 [host_machine]
 system     = msys
