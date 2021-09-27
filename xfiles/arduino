@@ -2,6 +2,9 @@
 mcpu     = 'atmega328p'
 arduroot = '/usr/share/arduino/hardware/archlinux-arduino/avr'
 
+[host_machine]
+cpu = mcpu
+
 [properties]
 ardu_src = [
   arduroot / 'cores/arduino/CDC.cpp',
@@ -27,6 +30,7 @@ ardu_src = [
   arduroot / 'cores/arduino/wiring_analog.c',
   arduroot / 'cores/arduino/wiring_digital.c',
   arduroot / 'cores/arduino/wiring_pulse.c',
+  arduroot / 'cores/arduino/wiring_pulse.S',
   arduroot / 'cores/arduino/wiring_shift.c',
   arduroot / 'libraries/HID/src/HID.cpp',
   arduroot / 'libraries/SoftwareSerial/src/SoftwareSerial.cpp',
@@ -80,6 +84,3 @@ c_link_args = [
 cpp_link_args = [
   '-mmcu=' + mcpu,
   ]
-
-[host_machine]
-cpu = mcpu
