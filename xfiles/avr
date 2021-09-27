@@ -6,22 +6,37 @@ chain = mfam
 bin   = '/usr/bin'
 
 [binaries]
-c        = bin / chain + '-gcc'
-cpp      = bin / chain + '-g++'
-ld       = bin / chain + '-ld'
-ar       = bin / chain + '-ar'
-as       = bin / chain + '-as'
-size     = bin / chain + '-size'
-objdump  = bin / chain + '-objdump'
-objcopy  = bin / chain + '-objcopy'
-strip    = bin / chain + '-strip'
-gdb      = bin / chain + '-gdb'
+c         = bin / chain + '-gcc'
+cpp       = bin / chain + '-g++'
+ld        = bin / chain + '-ld'
+ar        = bin / chain + '-ar'
+as        = bin / chain + '-as'
+nm        = bin / chain + '-nm'
+size      = bin / chain + '-size'
+objdump   = bin / chain + '-objdump'
+objcopy   = bin / chain + '-objcopy'
+ranlib    = bin / chain + '-ranlib'
+elfedit   = bin / chain + '-elfedit'
+readelf   = bin / chain + '-readelf'
+strings   = bin / chain + '-strings'
+strip     = bin / chain + '-strip'
+addr2line = bin / chain + '-addr2line'
+cppfilt   = bin / chain + '-c++filt'
+gdb       = bin / chain + '-gdb'
 
-openocd      = bin / 'openocd'
-avrdude      = bin / 'avrdude'
-#exe_wrapper = bin / 'simavr'
+openocd   = bin / 'openocd'
+avrdude   = bin / 'avrdude'
+qemu      = bin / 'qemu-system-avr'
+simavr    = bin / 'simavr'
 
 [host_machine]
 system     = msys
 cpu_family = mfam
 endian     = 'little'
+
+[built-in options]
+default_library = 'static'
+buildtype       = 'minsize'
+cpp_rtti        = false
+cpp_eh          = 'none'
+b_lto           = true
