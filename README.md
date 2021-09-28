@@ -61,7 +61,7 @@ eep_file = custom_target('example.eep',
   output: 'example.eep',
   command: [objcopy]
   + meson.get_external_property('avr_extract_eeprom')
-  + [@INPUT@', '@OUTPUT@']
+  + ['@INPUT@', '@OUTPUT@']
   ])
 
 hex_file = custom_target('example.hex',
