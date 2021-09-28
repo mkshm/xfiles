@@ -68,7 +68,7 @@ eep_file = custom_target('example.eep',
 hex_file = custom_target('example.hex',
   input: elf_file,
   output: 'example.hex',
-  command: [objcopy, '-O', 'ihex', '-R', '.eeprom'
+  command: [objcopy, '-O', 'ihex', '-R', '.eeprom',
     '@INPUT@', '@OUTPUT@',
   ])
 ```
