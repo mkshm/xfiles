@@ -29,6 +29,17 @@ avrdude   = bin / 'avrdude'
 qemu      = bin / 'qemu-system-avr'
 simavr    = bin / 'simavr'
 
+[properties]
+avr_extract_eeprom = [
+  '-O', 'ihex', '-j', '.eeprom',
+  '--set-section-flags=.eeprom=alloc,load',
+  '--no-chance-warnings', '--change-section-lma',
+  '-eeprom=0',
+  ]
+avr_extract_flash = [
+  '-O', 'ihex', '-R', '.eeprom',
+  ]
+
 [host_machine]
 system     = msys
 cpu_family = mfam
