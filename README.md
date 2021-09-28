@@ -59,17 +59,17 @@ elf_file = executable('example', 'example.c')
 eep_file = custom_target('example.eep',
   input: elf_file,
   output: 'example.eep',
-  command: [objcopy, '-O', 'ihex', '-j', '.eeprom',
-    '--set-section-flags=.eeprom=alloc,load',
-    '--no-chance-warnings', '--change-section-lma',
-    '-eeprom=0', '@INPUT@', '@OUTPUT@',
+  command: [objcopy]
+  + meson.get_external_property('avr_extract_eeprom')
+  + [@INPUT@', '@OUTPUT@']
   ])
 
 hex_file = custom_target('example.hex',
   input: elf_file,
   output: 'example.hex',
-  command: [objcopy, '-O', 'ihex', '-R', '.eeprom',
-    '@INPUT@', '@OUTPUT@',
+  command: [objcopy]
+  + meson.get_external_property('avr_extract_flash')
+  + ['@INPUT@', '@OUTPUT@']
   ])
 ```
 
