@@ -73,7 +73,7 @@ hex_file = custom_target('example.hex',
   ])
 ```
 
-Some targets also include vendor specific tools such as avrdude.
+Some targets also include target specific tools such as avrdude.
 
 ```meson
 avrdude = find_program('avrdude')
